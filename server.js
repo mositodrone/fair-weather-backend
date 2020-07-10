@@ -9,17 +9,14 @@ const register = require('./controllers/register');
 const signin = require('./controllers/signin');
 const profile = require('./controllers/profile');
 
-
 const db = knex({
     client: 'pg',
     connection: {
-        host : '127.0.0.1',
-        user : 'postgres',
-        password : 'main',
-        database : 'fair-weather'
+        connectionString: process.env.DATABASE_URL,
+        ssl: true 
     }
-});
-
+})
+ 
 const app = express();
 app.use(cors())
 app.use(bodyParser.json());
