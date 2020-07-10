@@ -24,10 +24,7 @@ app.use(bodyParser.json());
 const rooter = {root: __dirname} 
 
 
-
- app.get('/', (req, res)=> {
-	res.send();
-})
+app.get('/', (req, res)=> { res.send(db.users) })
 
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
