@@ -43,6 +43,6 @@ app.get('/credits', (req, res) => {
 	 res.sendFile(credits, rooter)
 })
  
-app.listen(process.env.port || 3200, ()=> {
-  console.log(`app is running on ${process.env.port}`);
+app.listen(process.env.PORT || 3200, ()=> {
+  console.log(`app is running on ${process.env.PORT}`);
 })
