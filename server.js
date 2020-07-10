@@ -44,5 +44,5 @@ app.get('/credits', (req, res) => {
 })
  
 app.listen(process.env.port || 3200, ()=> {
-  console.log(`app is running on ${port}`);
+  console.log(`app is running on ${process.env.port}`);
 })
