@@ -28,6 +28,11 @@ const rooter = {root: __dirname}
  app.get('/', (req, res)=> {
 	res.sendFile();
 })
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+}); 
  
 	app.post('/signin', signin.handleSignin(db, bcrypt))
 	app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcrypt) })
@@ -39,5 +44,5 @@ app.get('/credits', (req, res) => {
 })
  
 app.listen(process.env.port || 3200, ()=> {
-  console.log('app is running on port 3200');
+  console.log(`app is running on ${port}`);
 })
