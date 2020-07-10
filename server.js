@@ -26,10 +26,10 @@ const rooter = {root: __dirname}
 
 app.get('/', (req, res)=> { res.send(db.users) })
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  next();
-}); 
+// app.use((req, res, next) => {
+//   res.header('Access-Control-Allow-Origin', '*');
+//   next();
+// }); 
  
 	app.post('/signin', signin.handleSignin(db, bcrypt))
 	app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcrypt) })
